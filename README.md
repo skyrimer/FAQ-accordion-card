@@ -28,8 +28,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [https://github.com/skyrimer/3-column-preview-card-component](https://github.com/skyrimer/3-column-preview-card-component)
-- Live Site URL: [https://admiring-noyce-b82d28.netlify.app](https://admiring-noyce-b82d28.netlify.app)
+- Solution URL: [https://lucid-cray-b4e625.netlify.app](https://lucid-cray-b4e625.netlify.app)
+- Live Site URL: [https://github.com/skyrimer/FAQ-accordion-card](https://github.com/skyrimer/FAQ-accordion-card)
 
 ### Built with
 
