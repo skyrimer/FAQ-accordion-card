@@ -1,0 +1,171 @@
+@import url("https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap");
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+$background_violet: hsl(273, 75%, 66%);
+$background_blue: hsl(240, 73%, 65%);
+$dark-text: hsl(237, 12%, 33%);
+$gray-text: hsl(240, 6%, 50%);
+$border-color: hsl(240, 5%, 91%);
+:root {
+  font-size: 12px;
+  font-family: "Kumbh Sans", sans-serif;
+}
+
+.container-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: column;
+  min-height: 100vh;
+  padding-bottom: 2em;
+  background: linear-gradient(to bottom, $background_violet, $background_blue);
+}
+.container {
+  width: 90%;
+  max-width: 1300px;
+  background-color: white;
+  border-radius: 2em;
+  margin: 10em 0;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  @media screen and (min-width: 65em) {
+    flex-direction: row;
+  }
+  .image-right {
+    flex: 0 0 100%;
+    position: relative;
+    #box {
+      display: none;
+    }
+    .woman-wrapper,
+    #background {
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      @media screen and (min-width: 65em) {
+        display: none;
+      }
+    }
+    #background {
+      width: 200px;
+      @media screen and (min-width: 400px) {
+        width: auto;
+      }
+    }
+    .woman-wrapper {
+      top: -8em;
+      #woman {
+        width: 222px;
+        transform: translateX(-11.25px);
+      }
+      @media screen and (min-width: 400px) {
+        top: -9em;
+        #woman {
+          width: auto;
+          transform: translateX(-15px);
+        }
+      }
+    }
+    @media screen and (min-width: 65em) {
+      background-image: url("/images/illustration-woman-online-desktop.svg"),
+        url("/images/bg-pattern-desktop.svg");
+      background-repeat: no-repeat;
+      background-size: 100%, 200%;
+      flex-basis: 35em;
+      background-position: -5.5em 6em, -41em -20.5em;
+      #box {
+        display: block;
+        width: 30%;
+        transform: translate(-5em, 18em);
+      }
+    }
+    @media screen and (min-width: 78em) {
+      flex-basis: 50em;
+      background-position: -8em 9em, -55em -30.5em;
+      #box {
+        width: auto;
+        transform: translate(-8em, 25em);
+      }
+    }
+  }
+  .container-left {
+    flex-basis: 100%;
+    padding: 12em 2em 5em 2em;
+    @media screen and (min-width: 65em) {
+      padding: 8em 10em 5em 0;
+    }
+    h1 {
+      text-align: center;
+      font-size: 3rem;
+      margin-bottom: 1em;
+      @media screen and (min-width: 65em) {
+        text-align: left;
+      }
+    }
+    details {
+      font-size: 1.5rem;
+      padding: 1.5em 1em 1.5em 0;
+      border-bottom: 1px solid $border-color;
+      summary {
+        user-select: none;
+        cursor: pointer;
+        position: relative;
+        display: block;
+        list-style-type: none;
+        color: $dark-text;
+        outline: none;
+        font-weight: bold;
+        transition: all 0.3s ease-in-out;
+        &::after {
+          content: "";
+          background: url("/images/icon-arrow-down.svg") center no-repeat;
+          background-size: cover;
+          height: 0.525em;
+          width: 0.75em;
+          position: absolute;
+          top: 50%;
+          right: -1em;
+          transform: translateY(-50%);
+          transition: transform 0.3s ease-in-out;
+        }
+      }
+      &:hover summary,
+      &:focus summary {
+        color: #f58360;
+      }
+      &[open] summary {
+        color: $dark-text;
+
+        & ~ * {
+          animation: open 0.3s ease-in-out;
+        }
+        &::after {
+          transform: translateY(-50%) rotate(180deg);
+        }
+      }
+
+      p {
+        line-height: 130%;
+        color: $gray-text;
+        margin-top: 0.7em;
+      }
+    }
+  }
+}
+
+@keyframes open {
+  from {
+    opacity: 0;
+    transform: translate(-2em);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
